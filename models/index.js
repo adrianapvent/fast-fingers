@@ -1,23 +1,33 @@
+var fs = require("fs");
+var Sequelize = require("sequelize");
+var path = require("path");
+var filename = path.basename(module.filename);
+var environment = process.env.NODE_ENV || "development";
+var config = require(__dirname + "/../config/connection.js")[environment];
+var db = {};
 
-// SETUP const/var
+if (config.use_env_variable) {
+    var sequelize = new Sequelize(process.env[config.use_env_variable]);
+} else {
+    var sequelize = new Sequelize(config.database, config.username, config.password, config);
+}
 
+fs
+    .readdirSync(__dirname)
+    .filter(function(file) {
+        return (file.indexOf(".") !== 0) && (file !== filename) && (file.slice(-3) === ".js");
+    })
+    .forEach(function(file) {
+        var design = sequelize.import(path.join(__dirname, file));
+        db[design.name] = design;
+    });
+Object.keys(db).forEach(function(designName) {
+    if (db[designName].associate) {
+        db[designName].associate(db);
+    }
+});
 
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
 
-
-
-
-
-
-// const User = require('./User');
-// const Gallery = require('./Gallery');
-// const Painting = require('./Painting');
-
-// Gallery.hasMany(Painting, {
-//   foreignKey: 'gallery_id',
-// });
-
-// Painting.belongsTo(Gallery, {
-//   foreignKey: 'gallery_id',
-// });
-
-// module.exports = { User, Gallery, Painting };
+module.exports = db;
