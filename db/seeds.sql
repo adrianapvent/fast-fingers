@@ -3,6 +3,12 @@ USE GP2_db;
 INSERT INTO typing (difficulty, word)
 VALUES ("easy","card"),("easy","mouse"),("easy","phone"),("medium","computer desk"),("medium", "leather chair"),("medium","plastic bottle"),("hard","Lorem ipsum dolor sit amet"),("hard","Modular tiny homes for sale")
 
+
+/* pair key values as (Difficulty, word/phrase)
+
+INSERT INTO typing (difficulty, word)
+VALUES ("easy","card"),("easy","mouse"),("easy","phone"),("medium","computer desk"),("medium", "leather chair"),("medium","plastic bottle"),("hard","Lorem ipsum dolor sit amet"),("hard","Modular tiny homes for sale")
+
 /* pair key values as (Difficulty, word/phrase)
 Less than 10 key strokes = easy
 Between 10 & 20 key strokes = medium

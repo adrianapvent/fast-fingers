@@ -1,14 +1,15 @@
 * {
     box-sizing: border-box;
 }
-
 body {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e4/StarfieldSimulation.gif');
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height:100vh;
     margin: 0;
-    background-color: gray; 
+    padding:0;
 }
 
 body, .quote-input {
@@ -21,6 +22,7 @@ body, .quote-input {
     border-radius:.5rem;
     width: 700px;
     max-width: 90%;
+    justify-content: center;
 }
 
 .timer {

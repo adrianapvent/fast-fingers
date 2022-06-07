@@ -1,17 +1,17 @@
 {
-  "name": "museum-paintings",
+  "name": "fast-fingers",
   "version": "1.0.0",
-  "description": "![MIT](https://img.shields.io/badge/License-MIT-blue)",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "seed": "node seeds/index.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.1",
+    "axios": "^0.27.2",
+    "bcryptjs": "^2.4.3",
     "connect-session-sequelize": "^7.1.4",
     "dotenv": "^8.6.0",
     "express": "^4.18.1",
@@ -20,14 +20,5 @@
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
     "sequelize": "^6.20.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sam-pettyjohn/fast-fingers.git"
-  },
-  "keywords": [],
-  "bugs": {
-    "url": "https://github.com/sam-pettyjohn/fast-fingers/issues"
-  },
-  "homepage": "https://github.com/sam-pettyjohn/fast-fingers#readme"
+  }
 }
