@@ -1,3 +1,3 @@
-CREATE DATABASE fastfingers;
+CREATE DATABASE fastfingersGP2;
 
-USE fastfingers;
+USE fastfingersGP2;

@@ -16,9 +16,7 @@ require("./routes/HTML")(game);
 db.sequelize.sync().then(() => {
   game.listen(PORT, () => {
     console.log(
-      "==> Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
+      "App Listening on PORT " + PORT,
     );
   });
 });
