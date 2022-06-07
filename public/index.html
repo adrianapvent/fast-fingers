@@ -1,27 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Project 2 - Corona Typer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
-    <!-- Styles CSS-->
-    <link rel="stylesheet" href="./css/style.css">
-
-    <title>Fast Fingers!</title>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+      integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
+      crossorigin="anonymous"
+    />
     
-    <!-- Design HTML HERE -->
-    <h1>HELLO I FINALLY WAS ABLE TO MAKE THE SERVER WORK THANK THE LORD!</h1>
+    <link rel="stylesheet" href="./css/style.css"/>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <!-- /Public JS Scripts -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+  </head>
+
+  <body class="teal lighten-2">
+    <div id="particles-js"></div>
+
+    <button id="settings-btn" class="settings-btn">
+      <p>Hide UI</p>
+    </button>
+
+
+    <a id="start-btn" class="waves-effect waves-light teal lighten-3 btn-large"
+      >Start</a>
+
+      <div id="settings" class="settings">
+          <a id="btn-hs-modal" class="waves-effect waves-light btn modal-trigger" href="#modal1">View Highscores</a>
+          <!-- Modal 1 Structure -->
+          <a id="topModal" class="waves-effect waves-light btn modal-trigger" href="#modal2">Game Instructions</a>
+          <!-- Modal 2 Structure -->
+          <a id="topModal" class="waves-effect waves-light btn modal-trigger" href="#modal3">Restart Game</a>
+          <!-- Modal 3 Structure -->
+          <a id="topModal" class="waves-effect waves-light btn modal-trigger" href="#modal4"> About </a>
+          <!-- Modal 4 Structure -->
+      </div>
+      <!-- modal1 -->
+      <div id="modal1" class="modal">
+          <div class="modal-content" id="modal1">
+            <h4>View Highscores</h4>
+            <p><ol id="modal-high-scores-list"></ol></p>
+          </div>
+          <div id="modal-footer">
+            <a href="#modal1" class="modal-close waves-effect waves-green btn-flat">Close</a>
+          </div>
+        </div>
+      <!-- modal2 -->
+      <div id="modal2" class="modal">
+          <div class="modal-content">
+            <h4>Game Instructions</h4>
+            <p>Type as many words as you can before time runs out. Answering correctly gives precious seconds back to the player and increases the score counter.
+              <br>
+              <h6>Choosing difficulty:</h6> 
+              <br>
+                Easy - increased time for answering correctly by  5 seconds. Words are 9 letters or less.<br>
+                Medium - increased time for answering correctly by 3 seconds. Words are 10 to 20 letters in length.<br>
+                Hard - increased time for answering correctly by 2 seconds. Words are 20 letters or higher in length.<br>
+            </p> 
+          </div>
+          <div id="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+          </div>
+        </div>
+      <!-- modal3 -->
+      <div id="modal3" class="modal">
+          <div class="modal-content">
+            <h4>Restart Game</h4>
+            <p>Are you sure you want to restart your game?</p>
+            <img class="giphyGL" src=''>
+          </div>
+          <div id="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat restart">Restart</a>
+          </div>
+        </div>
+      <!-- modal4 -->
+      <div id="modal4" class="modal">
+          <div class="modal-content">
+            <h4>About the Developers</h4>
+                <p>Insert GitHub Info Here</p>
+          </div>
+          <div id="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+          </div>
+        </div>
+
+
+    <div class="container" id="typeArea">
+
+      <small>Type the following:</small>
+
+      <h1 id="word"></h1>
+
+      <input
+        type="text"
+        class="white-text"
+        id="text"
+        autocomplete="off"
+        placeholder="Type the word here..."
+      />
+
+      <p class="time-container">Time left: <span id="time">10s</span></p>
+
+      <p class="score-container">Score: <span id="score">0</span></p>
+
+      <div id="end-game-container" class="end-game-container"></div>
+    </div>
+
+    <div class="container teal lighten-1" id="difficultyArea">
+      <h2>
+        Choose Difficulty
+      </h2>
+      <form id="difficulty-form">
+        <div>
+          <label for="difficulty" class="white-text">Difficulty</label>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <button
+          type="submit"
+          id="start-game-button"
+          href="#"
+          class="waves-effect waves-light teal lighten-3 btn-large"
+
+        >
+          Start Game
+      </button> 
+      </form>
+</div>
+    <div class="container" id="enterInitialsArea">
+      <div id="enterInitialsHeader"></div>
+      <div class="row">
+        <form id="enter-initials-form">
+          <input
+            type="text"
+            class="white-text"
+            id="initials"
+            autocomplete="off"
+            placeholder="Enter your initials here..."
+            required="true"
+          />
+          <button
+            href="#"
+            class="waves-effect waves-light teal btn-large lighten-2"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container" id="highScoresArea">
+      <h2>
+        High Scores
+      </h2>
+      <div id="high-scores-container">
+        <ol class="collection" id="high-score-list"></ol>
+        <button
+          class="waves-effect waves-light teal lighten-3 btn-large restart"
+        >
+          Restart
+        </button>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+      integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0="
+      crossorigin="anonymous"
+    ></script>
+
     <script src="./js/game.js"></script>
-</body>
+    <script src="./js/modal.js"></script>
+  </body>
 </html>

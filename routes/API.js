@@ -4,8 +4,8 @@ const db = require("../models");
 // Routes
 module.exports = function (game) {
     // Get Route for returning words based on difficulty
-    game.get("/api/typing/difficulty/:difficulty", function (req, res) {
-        db.Typing.findAll({
+    game.get("/api/Typing/difficulty/:difficulty", function (req, res) {
+        db.typing.findAll({
             where: {
                 difficulty: req.params.difficulty
             }

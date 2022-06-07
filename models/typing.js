@@ -34,8 +34,8 @@ module.exports = function (sequelize, DataTypes) {
   // sequelize hook
   Typing.beforeUpsert(
     // RegExp SQL / eslint disable next line no unused vars
-    async function (typing) {
-      let phraseLength = await typing.split(" ").filter(x => /\w/.test(x)).length;
+    async function (typing, options) {
+      let phraseLength = await typing.split(" ").filter(c => /\w/.test(c)).length;
       typing.keyCount = phraseLength;
     },
     {
