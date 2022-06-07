@@ -9,74 +9,42 @@ module.exports = function (sequelize, DataTypes) {
           isIn: [["easy","medium","hard"]]
         }
       },
+      // words must be unique
       words: {
-        // words must be unique
-        // code tbd
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+          isAlpha: true,
+          len: [1, 20]
+        }
       },
+      // will count every character entered by user.
       typingCounter: {
-        // will count every character entered by user.
-        //code tbd
+        type: DataTypes.INTEGER,
+        allowNull: false
       }
     },
     {
-      // model table name === model name
-      stopTable: true 
+    // model table name === model name
+    stopTable: true 
     }
-  )
+  );
+
+  // sequelize hook
+  Typing.beforeUpsert(
+    // RegExp SQL / eslint disable next line no unused vars
+    async function (typing) {
+      let phraseLength = await typing.split(" ").filter(x => /\w/.test(x)).length;
+      typing.keyCount = phraseLength;
+    },
+    {
+      catch(error) {
+        console.log(error);
+      }
+    }
+
+  );
+
   return Typing;
 };
-
-
-
-
-
-// const { Model, DataTypes } = require('sequelize');
-// const sequelize = require('../config/connection');
-
-// class Painting extends Model {}
-
-// Painting.init(
-//   {
-//     id: {
-//       type: DataTypes.INTEGER,
-//       allowNull: false,
-//       primaryKey: true,
-//       autoIncrement: true,
-//     },
-//     title: {
-//       type: DataTypes.STRING,
-//       allowNull: false,
-//     },
-//     artist: {
-//       type: DataTypes.STRING,
-//       allowNull: false,
-//     },
-//     exhibition_date: {
-//       type: DataTypes.DATE,
-//       allowNull: false,
-//     },
-//     filename: {
-//       type: DataTypes.STRING,
-//       allowNull: false,
-//     },
-//     description: {
-//       type: DataTypes.STRING,
-//       allowNull: false,
-//     },
-//     gallery_id: {
-//       type: DataTypes.INTEGER,
-//       references: {
-//         model: 'gallery',
-//         key: 'id',
-//       },
-//     },
-//   },
-//   {
-//     sequelize,
-//     freezeTableName: true,
-//     underscored: true,
-//     modelName: 'painting',
-//   }
-// );
-
-// module.exports = Painting;

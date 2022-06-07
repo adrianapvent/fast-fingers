@@ -1,0 +1,10 @@
+body{
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e4/StarfieldSimulation.gif');
+    background-size: cover;
+    
+    
+    
+    height: 100vh;
+    padding:0;
+    margin:0;
+}
