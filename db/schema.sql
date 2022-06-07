@@ -1,3 +1,3 @@
-CREATE DATABASE GP2_db;
+CREATE DATABASE fastfingers;
 
-USE GP2_db;
+USE fastfingers;
