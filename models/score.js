@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false,
         validate: {
           isNumeric: true,
-          len: [1, 500]
+          len: [1, 1000]
         }
       }
     },

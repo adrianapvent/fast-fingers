@@ -1,9 +1,15 @@
+"use strict";
+
 var fs = require("fs");
-var Sequelize = require("sequelize");
 var path = require("path");
+
+const { Sequelize } = require("sequelize");
+
 var filename = path.basename(module.filename);
-var environment = process.env.NODE_ENV || "development";
-var config = require(__dirname + "/../config/connection.js")[environment];
+
+var env = process.env.NODE_ENV || "development";
+var config = require("../config/config.json")[env];
+
 var db = {};
 
 if (config.use_env_variable) {
@@ -11,19 +17,20 @@ if (config.use_env_variable) {
 } else {
     var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
-
+  
 fs
     .readdirSync(__dirname)
     .filter(function(file) {
         return (file.indexOf(".") !== 0) && (file !== filename) && (file.slice(-3) === ".js");
     })
     .forEach(function(file) {
-        var design = sequelize.import(path.join(__dirname, file));
-        db[design.name] = design;
+        var table = sequelize.define(path.join(__dirname, file));
+        db[table.name] = table;
     });
-Object.keys(db).forEach(function(designName) {
-    if (db[designName].associate) {
-        db[designName].associate(db);
+
+Object.keys(db).forEach(function(tableName) {
+    if (db[tableName].associate) {
+        db[tableName].associate(db);
     }
 });
 
