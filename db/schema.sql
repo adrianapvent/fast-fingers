@@ -1,4 +1,3 @@
-DROP DATABASE IF EXISTS museum_db;
+CREATE DATABASE GP2_db;
 
-CREATE DATABASE museum_db;
-
+USE GP2_db;
