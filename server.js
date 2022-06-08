@@ -3,6 +3,7 @@ const app = express();
 const db = require("./models");
 const bcrypt = require("bcrypt");
 
+// .env
 const dotenv = require("dotenv");
 dotenv.config();
 
