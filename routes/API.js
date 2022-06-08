@@ -13,7 +13,7 @@ module.exports = function (game) {
         });
     });
     // Get Route for PLAYERS in top 5 high scores
-    game.get("api/player/score", function (req, res) {
+    game.get("/api/player/score", function (req, res) {
         db.Score.findAll({
             order: [["score", "description"]],
             limit: 5
