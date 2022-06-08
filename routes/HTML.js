@@ -2,10 +2,10 @@ const { append } = require("express/lib/response");
 var path = require("path");
 
 // Routes
-module.exports = function(game) {
+module.exports = function(app) {
 
     // loads index.html
-    game.get("/", function(req, res) {
+    app.get("/", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/index.html"));
     });
 }

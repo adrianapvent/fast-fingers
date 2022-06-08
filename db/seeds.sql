@@ -1,6 +1,6 @@
 USE fastfingersGP2;
 
-INSERT INTO word (difficulty, word)
+INSERT INTO words (difficulty, words)
 VALUES ("easy","card"),("easy","mouse"),("easy","phone"),("medium","computer desk"),("medium", "leather chair"),("medium","plastic bottle"),("hard","Lorem ipsum dolor sit amet"),("hard","Modular tiny homes for sale");
 
 

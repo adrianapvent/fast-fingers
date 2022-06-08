@@ -63,7 +63,7 @@ $(document).ready(function () {
   function queryWords(game_difficulty) {
     $.ajax({
       method: "GET",
-      url: "/api/typing/difficulty/" + game_difficulty
+      url: "/api/words/difficulty/" + game_difficulty
     }).then(data => {
       // Initiate Main Game Function by passing words sorted by difficulty level
       collectWords(data);
@@ -167,7 +167,7 @@ $(document).ready(function () {
   function getHighScores() {
     $.ajax({
       method: "GET",
-      url: "/api/player/score"
+      url: "/api/player/scores"
     }).then(response => {
       displayHighScores(response);
     });
@@ -205,7 +205,7 @@ $(document).ready(function () {
 
     $.ajax({
       method: "GET",
-      url: "/api/player/score"
+      url: "/api/player/scores"
     }).then(response => {
       let html = "";
 

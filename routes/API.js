@@ -1,36 +1,35 @@
-// require model dir
 const db = require("../models");
 
 // Routes
-module.exports = function (game) {
-    // Get Route for returning words based on difficulty
-    game.get("/api/Typing/difficulty/:difficulty", function (req, res) {
-        db.typing.findAll({
-            where: {
-                difficulty: req.params.difficulty
-            }
-        }).then(function(dbTyping) {
-            res.json(dbTyping);
-        });
+module.exports = function (app) {
+  // Get route for returning words based on difficulty
+  app.get("/api/words/difficulty/:difficulty", function (req, res) {
+    db.Words.findAll({
+      where: {
+        difficulty: req.params.difficulty
+      }
+    }).then(function (dbWords) {
+      res.json(dbWords);
     });
+  });
 
-    // Get Route for PLAYERS in top 5 high scores
-    game.get("api/player/score", function (req, res) {
-        db.Score.findAll({
-            order: [["score", "description"]],
-            limit: 5
-        }).then(function (dbScore) {
-            res.json(dbScore);
-        });
+  // Get route for getting top 5 highscores
+  app.get("/api/player/score", function (req, res) {
+    db.Scores.findAll({
+      order: [["score", "DESC"]],
+      limit: 5
+    }).then(function (dbScores) {
+      res.json(dbScores);
     });
+  });
 
-    // Post Route for saving PLAYER name + score
-    game.post("/api/player", function (req, res) {
-        db.Score.create({
-            player: req.body.player,
-            score: req.body.score
-        }).then(function (dbPlayer) {
-            res.json(dbPlayer);
-        });
+  // Post route for saving player name and score
+  app.post("/api/player", function (req, res) {
+    db.Scores.create({
+      player: req.body.player,
+      score: req.body.score
+    }).then(function (dbPlayer) {
+      res.json(dbPlayer);
     });
+  });
 };
