@@ -55,7 +55,7 @@ Test
 If you have any questions, you may direct them to sam-pettyjohn using the following links:
 | | Description |
 | --- | --- |
-| Names | James Huang, Sam PettyJohn, Adriana Pena |
+| Names | James Huang, Sam Pettyjohn, Adriana Pena |
 | Occupation | Developers |
 | GitHub | <https://github.com/sam-pettyjohn/> |
 
