@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const db = require("./models");
-const bcrypt = require("bcrypt");
 
 
 const PORT = process.env.PORT || 3001;
