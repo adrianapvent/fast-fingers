@@ -15,7 +15,7 @@ module.exports = function (app) {
 
   // Get route for getting top 5 highscores
   app.get("/api/player/score", function (req, res) {
-    db.Scores.findAll({
+    db.scores.findAll({
       order: [["score", "DESC"]],
       limit: 5
     }).then(function (dbScores) {
@@ -25,7 +25,7 @@ module.exports = function (app) {
 
   // Post route for saving player name and score
   app.post("/api/player", function (req, res) {
-    db.Scores.create({
+    db.scores.create({
       player: req.body.player,
       score: req.body.score
     }).then(function (dbPlayer) {
