@@ -2,8 +2,9 @@
 ![MIT](https://img.shields.io/badge/License-MIT-blue)
 
 ## Description
-Welcome to the Fast Fingers project!
-An application that performs game-like functions to enhance typing skillset for levels. The initial idea behind the project, was to create a functional website to enhance our current typing skills, as we continue to build towards becoming web developers. The idea evolved to implement fun and rewarding concepts, such as racing against a clock and having a leaderboard, to entice all users to enjoy the tedious process of learning to type correctly and efficently. The application incorporates a retro theme and provides 'a blast from the past' feeling encouraging all ages to want to participate. The application incorporates higher level technologies such as Sequelize, Express, Node, bcrypt, and Heroku. Future development planning includes ideas for pseudorandominess, competing against other players, and suggestions for improvement. 
+ Welcome to the Fast Fingers project!
+
+- An application that performs game-like functions to enhance typing skillset for all levels. The initial idea behind the project, was to create a functional website to enhance our current typing skills, as we continue to build towards becoming web developers. The idea evolved to implement fun and rewarding concepts, such as racing against a clock and having a leaderboard, to entice all users to enjoy the tedious process of learning to type correctly and efficiently. The application incorporates a retro theme and provides 'a blast from the past' feeling encouraging all ages to want to explore the fun nature of the game. The application utilizes higher level technologies such as Sequelize, Express, Node, bcrypt, and Heroku. Future development planning includes ideas for pseudorandominess, competing against other players, and suggestions for improvement. 
 
 You may visit the deployed [website]() to try it out for yourself!
 ## Table of Contents
@@ -14,10 +15,10 @@ You may visit the deployed [website]() to try it out for yourself!
   - [Mock-up](#mock-up)
   - [Technologies](#technologies)
   - [Installation](#installation)
+    - [VSCode:](#vscode)
   - [Usage](#usage)
     - [Technologies Used](#technologies-used)
   - [Collaborators](#collaborators)
-  - [Tests](#tests)
   - [Questions](#questions)
   - [License](#license)
 
@@ -27,7 +28,7 @@ I WANT to be able to view my typing accuracy, typing speed and track my overall 
 SO THAT I can increase my overall efficiency with typing
 
 ## Mock-up
-![mockup]()
+![homepage](/public/css/images/Screen%20Shot%202022-06-09%20at%2012.37.11%20PM.png)
 ![instrucions](/public/css/images/Screen%20Shot%202022-06-09%20at%2012.08.39%20PM.png)
 ![keyboardFeat](/public/css/images/Screen%20Shot%202022-06-09%20at%2012.09.08%20PM.png)
 
@@ -41,19 +42,26 @@ SO THAT I can increase my overall efficiency with typing
 | 4 | mysql2 package |
 | 6 | sequelize |
 | 7 | inquirer package |
-| 8 | console.table package |
-| 9 | dotenv package |
-| 10 | express package |
-| 11 | handlebars package |
+| 8 | dotenv package |
+| 9 | express package |
+| 10 | handlebars package |
 
 ## Installation
-VSCode
+### VSCode:
+First, install the required dependencies using:
+
+npm install
+
+After that, the development server can be started using:
+
+node server.js
+
+Finally, you can access the development site at http://localhost:3001/. Any changes made to the source file will be reloaded automatically.
 <!-- If you are working on a project that a user needs to install or run locally in a machine like a "POS", you should include the steps required to install your project and also the required dependencies if any.
 
 Provide a step-by-step description of how to get the development environment set and running. -->
 
 ## Usage
-Usage
 <!-- Provide instructions and examples so users/contributors can use the project. This will make it easy for them in case they encounter a problem – they will always have a place to reference what is expected.
 
 You can also make use of visual aids by including materials like screenshots to show examples of the running project and also the structure and design principles used in your project.
@@ -66,18 +74,17 @@ Also if your project will require authentication like passwords or usernames, th
 - API's
 - dotenv - manages environment variable in klocal environment
 - Handlebars Templating- Templating Engine
+- MYSQL- open-source, relational database management system
 - Sequelize- JS style access to MYSQL database
 - Express- For HTML routing and API queries
 - bcrypt.js- to hash passwords before storing in database
 - Heroku- cloud platform
 - Node.js- open-source, cross-platform back-end Javascript runtime environment
-- MYSQL- open-source, relational database management system
+
 
 ## Collaborators
 Sam Pettyjohn, James Huang, Adriana Pena
 
-## Tests
-Test
 
 ## Questions
 If you have any questions, you may direct them to sam-pettyjohn using the following links:
@@ -86,6 +93,7 @@ If you have any questions, you may direct them to sam-pettyjohn using the follow
 | Names | James Huang, Sam Pettyjohn, Adriana Pena |
 | Occupation | Developers |
 | GitHub | <https://github.com/sam-pettyjohn/> |
+
 
 ## License
 MIT License
