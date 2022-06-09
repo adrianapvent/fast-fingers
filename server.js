@@ -22,6 +22,7 @@ app.use(express.static("public"));
 
 app.use(routes);
 require("./routes/API")(app);
+require("./routes/HTML")(app);
 
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
