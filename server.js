@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
 const db = require("./models");
-// const exphbs = require("express-handlebars");
+const handlebars = require('express-handlebars');
 
 const dotenv = require("dotenv");
+const res = require("express/lib/response");
 dotenv.config();
 
 
@@ -17,9 +18,15 @@ require("./routes/API")(app);
 require("./routes/HTML")(app);
 
 // const hbs = exphbs.create({ helpers });
+app.set('view engine', 'handlebars');
+app.engine('handlebars', handlebars({
+  layoutsDir:`${__dirname}/views/layouts`
+}));
 
-// app.engine('handlebars', hbs.engine);
-// app.set('view engine', 'handlebars');
+
+app.get('/', (req.res) => {
+  res.render('main', {layout: 'index'});
+});
 
 
 db.sequelize.sync().then(() => {

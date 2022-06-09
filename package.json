@@ -1,7 +1,7 @@
 {
   "name": "fast-fingers",
   "version": "1.0.0",
-  "description": "",
+  "description": "![MIT](https://img.shields.io/badge/License-MIT-blue)",
   "main": "server.js",
   "scripts": {
     "devStart": "nodemon server.js",
@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-handlebars": "^5.3.5",
@@ -23,5 +24,13 @@
   "devDependencies": {
     "@types/express-handlebars": "^6.0.0",
     "nodemon": "^2.0.16"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sam-pettyjohn/fast-fingers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sam-pettyjohn/fast-fingers/issues"
+  },
+  "homepage": "https://github.com/sam-pettyjohn/fast-fingers#readme"
 }
