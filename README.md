@@ -71,7 +71,7 @@ Also if your project will require authentication like passwords or usernames, th
 ### Technologies Used
 - HTML/CSS/Git
 - Javascript
-- Bootstrap
+- Materialize via cloudflare
 - API's
 - dotenv - manages environment variable in local environment
 - Handlebars Templating- Templating Engine
