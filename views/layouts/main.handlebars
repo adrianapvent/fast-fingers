@@ -8,97 +8,12 @@
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="./css/style.css"/>
-    <!-- Include Handlebars from a CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <script>
-      // compile the template
-      var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
-      // execute the compiled template and print the output to the console
-      console.log(template({ doesWhat: "rocks!" }));
-    </script>
     <!-- cloudlfare -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
   </head>
 
   <body class="teal lighten-2">
-    <button id="settings-btn" class="settings-btn"> <p>Toggle UI</p> </button>
-    <a id="start-btn" class="waves-effect waves-light teal lighten-3 btn-large">Start</a>
-
-    <script id="keyboard-template" type="text/x-handlebars-template">
-        <div class="keyboard">
-            <div class="body">
-            {{body}}
-            </div>
-        </div>
-    </script>
-
-    <script id="modals-template" type="text/x-handlebars-template">
-        <div class="modals">
-            <div class="settings">
-            {{body}}
-            </div>
-        </div>
-    </script>
-
-    <script id="modals-template" type="text/x-handlebars-template">
-        <div class="modals">
-            <div class="settings">
-            {{body}}
-            </div>
-        </div>
-    </script>
-
-
-
-    <div class="container" id="typeArea">
-      <small>Type the following:</small>
-      <h1 id="word"></h1>
-      <input type="text" class="white-text" id="text" autocomplete="off" placeholder="Type word here..."/>
-      <p class="time-container">Time left: <span id="time">10s</span></p>
-      <p class="score-container">Score: <span id="score">0</span></p>
-      <div id="end-game-container" class="end-game-container"></div>
-    </div>
-
-    <div class="container teal lighten-1" id="difficultyArea">
-      <h2>Choose Your Difficulty!</h2>
-      <form id="difficulty-form">
-        <div>
-          <select id="difficulty">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-          </select>
-        </div>
-        <button type="submit" id="start-game-button" href="#" class="waves-effect waves-light teal lighten-3 btn-large"> Start Game </button> 
-      </form>
-    </div>
-
-    <div class="container" id="enterInitialsArea">
-      <div id="enterInitialsHeader"></div>
-      <div class="row">
-        <form id="enter-initials-form">
-          <input type="text" class="white-text" id="initials" autocomplete="off" placeholder="Enter your initials here..." required="true"/>
-          <button href="#" class="waves-effect waves-light teal btn-large lighten-2" type="submit"> Submit </button>
-        </form>
-      </div>
-    </div>
-
-    <div class="container" id="highScoresArea">
-      <h2>High Scores</h2>
-      <div id="high-scores-container">
-        <ol class="collection" id="high-score-list"></ol>
-        <button class="waves-effect waves-light teal lighten-3 btn-large restart"> Restart </button>
-      </div>
-    </div>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- styles -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous"></script>
-    <!-- Game Script -->
-    <script src="./js/game.js"></script>
-    <!-- Modals Script -->
-    <script src="./js/modal.js"></script>
+    {{{ body }}}
   </body>
 
 </html>

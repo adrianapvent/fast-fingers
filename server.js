@@ -1,7 +1,12 @@
 const express = require("express");
 const app = express();
 const db = require("./models");
-// const exphbs = require("express-handlebars");
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create({});
+const routes = require('./routes');
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 const dotenv = require("dotenv");
 const { Sequelize } = require("./models");
@@ -14,14 +19,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
+app.use(routes);
 require("./routes/API")(app);
-require("./routes/HTML")(app);
-
-// const hbs = exphbs.create({ helpers });
-
-// app.engine('handlebars', hbs.engine);
-// app.set('view engine', 'handlebars');
-
 
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
