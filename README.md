@@ -3,7 +3,8 @@
 
 ## Description
 Welcome to the Fast Fingers project!
-An application that performs game-like functions to enhance typing skillset for levels.
+An application that performs game-like functions to enhance typing skillset for levels. The initial idea behind the project, was to create a functional website to enhance our current typing skills, as we continue to build towards becoming web developers. The idea evolved to implement fun and rewarding concepts, such as racing against a clock and having a leaderboard, to entice all users to enjoy the tedious process of learning to type correctly and efficently. The application incorporates a retro theme and provides 'a blast from the past' feeling encouraging all ages to want to participate. The application incorporates higher level technologies such as Sequelize, Express, Node, bcrypt, and Heroku. Future development planning includes ideas for pseudorandominess, competing against other players, and suggestions for improvement. 
+
 You may visit the deployed [website]() to try it out for yourself!
 ## Table of Contents
 - [Fast-Fingers](#fast-fingers)
@@ -14,7 +15,7 @@ You may visit the deployed [website]() to try it out for yourself!
   - [Technologies](#technologies)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Contributing](#contributing)
+  - [Collaborators](#collaborators)
   - [Tests](#tests)
   - [Questions](#questions)
   - [License](#license)
@@ -38,15 +39,25 @@ SO THAT I can increase my overall efficiency with typing
 | 7 | inquirer package |
 | 8 | console.table package |
 | 9 | dotenv package |
+| 10 | express package |
+| 11 | handlebars package |
 
 ## Installation
 VSCode
+<!-- If you are working on a project that a user needs to install or run locally in a machine like a "POS", you should include the steps required to install your project and also the required dependencies if any.
+
+Provide a step-by-step description of how to get the development environment set and running. -->
 
 ## Usage
 Usage
+<!-- Provide instructions and examples so users/contributors can use the project. This will make it easy for them in case they encounter a problem – they will always have a place to reference what is expected.
 
-## Contributing
-Contribute
+You can also make use of visual aids by including materials like screenshots to show examples of the running project and also the structure and design principles used in your project.
+
+Also if your project will require authentication like passwords or usernames, this is a good section to include the credentials. -->
+
+## Collaborators
+Sam Pettyjohn, James Huang, Adriana Pena
 
 ## Tests
 Test
