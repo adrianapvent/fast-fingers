@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const db = require("./models");
+// const exphbs = require("express-handlebars");
 
 const dotenv = require("dotenv");
 dotenv.config();
@@ -14,6 +15,11 @@ app.use(express.static("public"));
 
 require("./routes/API")(app);
 require("./routes/HTML")(app);
+
+// const hbs = exphbs.create({ helpers });
+
+// app.engine('handlebars', hbs.engine);
+// app.set('view engine', 'handlebars');
 
 
 db.sequelize.sync().then(() => {
