@@ -10,10 +10,11 @@ app.set('view engine', 'handlebars');
 
 // .env
 const dotenv = require("dotenv");
+const { Sequelize } = require("./models");
 dotenv.config();
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3005;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
