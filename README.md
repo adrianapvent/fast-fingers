@@ -1,6 +1,7 @@
 # Fast-Fingers
 ![MIT](https://img.shields.io/badge/License-MIT-blue)
 
+
 ## Description
 Welcome to the Fast Fingers project!
 An application that performs game-like functions to enhance typing skillset for levels.
