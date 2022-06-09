@@ -1,15 +1,15 @@
-<button id="settings-btn" class="settings-btn"> <p>Toggle UI</p> </button>
-    <a id="start-btn" class="waves-effect waves-light teal lighten-3 btn-large">Start</a>
+<button id="settings-btn" class="settings-btn teal"> <p>Toggle UI</p> </button>
+    <a id="start-btn" class="waves-effect waves-light teal btn-large">Start</a>
 
       <div id="settings" class="settings">
           <!-- Modal 1 Structure -->
-          <a id="btn-hs-modal" class="waves-effect waves-light btn modal-trigger" href="#modal1">View Highscores</a>
+          <a id="btn-hs-modal" class="waves-effect waves-light btn modal-trigger" href="#modal1">Highscores</a>
           <!-- Modal 2 Structure -->
-          <a id="topModal" class="waves-effect waves-light btn modal-trigger" href="#modal2">Game Instructions</a>
+          <a id="topModal" class="waves-effect waves-light btn modal-trigger" href="#modal2">Instructions</a>
           <!-- Modal 3 Structure -->
-          <a id="topModal" class="waves-effect waves-light btn modal-trigger" href="#modal3">Restart Game</a>
+          <a id="topModal" class="waves-effect waves-light btn modal-trigger" href="#modal3">Restart</a>
           <!-- Modal 4 Structure -->
-          <a id="topModal" class="waves-effect waves-light btn modal-trigger" href="#modal4">About</a>
+          <a id="topModal" class="waves-effect waves-light btn modal-trigger" href="#modal4">About Us</a>
       </div>
 
       <!-- Modal 1 -->
@@ -61,7 +61,7 @@
             <h4>About the Developers</h4>
             <br>
             <h6>Suggestions? Comments?</h6>
-            <p>Check out the Fast Fingers GitHub <a href="https://github.com/sam-pettyjohn/fast-fingers">here</a>!</p>
+            <p>Check out the Fast Fingers GitHub <a href="https://github.com/sam-pettyjohn/fast-fingers">here!</a></p>
             <br>
             <h6>Want to Connect? Checkout our GitHub Repos:</h6>
             <p><a href="https://github.com/adrianapvent">Adriana Pena</a></p>
@@ -101,7 +101,7 @@
       <div id="enterInitialsHeader"></div>
       <div class="row">
         <form id="enter-initials-form">
-          <input type="text" class="white-text" id="initials" autocomplete="off" placeholder="Enter your initials here..." required="true"/>
+          <input type="text" class="white-text" id="initials" autocomplete="off" placeholder="Enter your name here..." required="true"/>
           <button href="#" class="waves-effect waves-light teal btn-large lighten-2" type="submit"> Submit </button>
         </form>
       </div>
@@ -110,7 +110,7 @@
     <div class="container" id="highScoresArea">
       <h2>High Scores</h2>
       <div id="high-scores-container">
-        <ol class="collection" id="high-score-list"></ol>
+        <ul class="collection" id="high-score-list"></ul>
         <button class="waves-effect waves-light teal lighten-3 btn-large restart"> Restart </button>
       </div>
     </div>
