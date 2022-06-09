@@ -10,7 +10,6 @@ app.set('view engine', 'handlebars');
 
 // .env
 const dotenv = require("dotenv");
-const { Sequelize } = require("./models");
 dotenv.config();
 
 
