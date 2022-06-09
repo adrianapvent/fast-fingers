@@ -182,7 +182,7 @@ $(document).ready(function () {
 
     highscores.forEach((highscore, c) => {
       html += `
-            <li class="collection-item">${c + 1}. ${highscore.player} - ${
+            <li class="collection-item">${highscore.player} - ${
         highscore.score
       }</li>
       `;
@@ -211,7 +211,7 @@ $(document).ready(function () {
 
       response.forEach((highscore, c) => {
         html += `
-              <li class="collection-item">${c + 1}. ${highscore.player} - ${
+              <li class="collection-item">${highscore.player} - ${
           highscore.score
         }</li>
         `;

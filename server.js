@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
 const db = require("./models");
-const bcrypt = require("bcrypt");
+
+const dotenv = require("dotenv");
+dotenv.config();
 
 
 const PORT = process.env.PORT || 3001;
-
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

@@ -3,17 +3,15 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize/lib/sequelize');
-const basename = path.basename(module.filename);
+const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
+const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
 let sequelize;
 if (config.use_env_variable) {
-    // make db table if deployed
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
-    // make db table if local
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
@@ -23,7 +21,7 @@ fs
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
   .forEach(file => {
-    const model = sequelize.define(path.join(__dirname, file));
+    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
     db[model.name] = model;
   });
 

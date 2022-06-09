@@ -5,46 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Fast Fingers!</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-      integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
-      crossorigin="anonymous"
-    />
-    
+    <!-- stylesheet -->
     <link rel="stylesheet" href="./css/style.css"/>
-
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
+    <!-- cloudlfare -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
   </head>
 
   <body class="teal lighten-2">
-    <div id="particles-js"></div>
-
-    <button id="settings-btn" class="settings-btn">
-      <p>Hide UI</p>
-    </button>
-
-
-    <a id="start-btn" class="waves-effect waves-light teal lighten-3 btn-large"
-      >Start</a>
+    <button id="settings-btn" class="settings-btn"> <p>Toggle UI</p> </button>
+    <a id="start-btn" class="waves-effect waves-light teal lighten-3 btn-large">Start</a>
 
       <div id="settings" class="settings">
-          <a id="btn-hs-modal" class="waves-effect waves-light btn modal-trigger" href="#modal1">View Highscores</a>
           <!-- Modal 1 Structure -->
-          <a id="topModal" class="waves-effect waves-light btn modal-trigger" href="#modal2">Game Instructions</a>
+          <a id="btn-hs-modal" class="waves-effect waves-light btn modal-trigger" href="#modal1">View Highscores</a>
           <!-- Modal 2 Structure -->
-          <a id="topModal" class="waves-effect waves-light btn modal-trigger" href="#modal3">Restart Game</a>
+          <a id="topModal" class="waves-effect waves-light btn modal-trigger" href="#modal2">Game Instructions</a>
           <!-- Modal 3 Structure -->
-          <a id="topModal" class="waves-effect waves-light btn modal-trigger" href="#modal4"> About </a>
+          <a id="topModal" class="waves-effect waves-light btn modal-trigger" href="#modal3">Restart Game</a>
           <!-- Modal 4 Structure -->
+          <a id="topModal" class="waves-effect waves-light btn modal-trigger" href="#modal4">About</a>
       </div>
-      <!-- modal1 -->
+
+      <!-- Modal 1 -->
       <div id="modal1" class="modal">
           <div class="modal-content" id="modal1">
             <h4>View Highscores</h4>
@@ -54,39 +37,51 @@
             <a href="#modal1" class="modal-close waves-effect waves-green btn-flat">Close</a>
           </div>
         </div>
-      <!-- modal2 -->
+      <!-- Modal 2 -->
       <div id="modal2" class="modal">
           <div class="modal-content">
             <h4>Game Instructions</h4>
-            <p>Type as many words as you can before time runs out. Answering correctly gives precious seconds back to the player and increases the score counter.
+            <p>Fast Fingers is a game to hone your typing speed and speed. Answering correctly gives precious seconds back to the player and increases the score counter. See how long you can survive!
+              <br>
               <br>
               <h6>Choosing difficulty:</h6> 
-              <br>
-                Easy - increased time for answering correctly by  5 seconds. Words are 9 letters or less.<br>
-                Medium - increased time for answering correctly by 3 seconds. Words are 10 to 20 letters in length.<br>
-                Hard - increased time for answering correctly by 2 seconds. Words are 20 letters or higher in length.<br>
+                Easy - increased time for answering correctly by  5 seconds. Words are 9 letters or less and are only one word. Simple fun!
+                <br>
+                <br>
+                Medium - increased time for answering correctly by 3 seconds. Words are 10 to 20 letters in length and may contain small phrases. A true challenge.
+                <br>
+                <br>
+                Hard - increased time for answering correctly by 2 seconds. Words are 20 letters or higher in length and are larger phrases. Try it if you dare..!
+                <br>
+                <br>
             </p> 
           </div>
           <div id="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
           </div>
         </div>
-      <!-- modal3 -->
+      <!-- Modal 3 -->
       <div id="modal3" class="modal">
           <div class="modal-content">
             <h4>Restart Game</h4>
             <p>Are you sure you want to restart your game?</p>
-            <img class="giphyGL" src=''>
           </div>
           <div id="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat restart">Restart</a>
           </div>
         </div>
-      <!-- modal4 -->
+      <!-- Modal 4 -->
       <div id="modal4" class="modal">
           <div class="modal-content">
             <h4>About the Developers</h4>
-                <p>Insert GitHub Info Here</p>
+            <br>
+            <h6>Suggestions? Comments?</h6>
+            <p>Check out the Fast Fingers GitHub <a href="https://github.com/sam-pettyjohn/fast-fingers">here</a>!</p>
+            <br>
+            <h6>Want to Connect? Checkout our GitHub Repos:</h6>
+            <p><a href="https://github.com/adrianapvent">Adriana Pena</a></p>
+            <p><a href="https://github.com/mrxanthic">James Huang</a></p>
+            <p><a href="https://github.com/sam-pettyjohn/fast-fingers">Sam Pettyjohn</a></p>
           </div>
           <div id="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -95,94 +90,54 @@
 
 
     <div class="container" id="typeArea">
-
       <small>Type the following:</small>
-
       <h1 id="word"></h1>
-
-      <input
-        type="text"
-        class="white-text"
-        id="text"
-        autocomplete="off"
-        placeholder="Type the word here..."
-      />
-
+      <input type="text" class="white-text" id="text" autocomplete="off" placeholder="Type word here..."/>
       <p class="time-container">Time left: <span id="time">10s</span></p>
-
       <p class="score-container">Score: <span id="score">0</span></p>
-
       <div id="end-game-container" class="end-game-container"></div>
     </div>
 
     <div class="container teal lighten-1" id="difficultyArea">
-      <h2>
-        Choose Difficulty
-      </h2>
+      <h2>Choose Your Difficulty!</h2>
       <form id="difficulty-form">
         <div>
-          <label for="difficulty" class="white-text">Difficulty</label>
           <select id="difficulty">
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
           </select>
         </div>
-        <button
-          type="submit"
-          id="start-game-button"
-          href="#"
-          class="waves-effect waves-light teal lighten-3 btn-large"
-
-        >
-          Start Game
-      </button> 
+        <button type="submit" id="start-game-button" href="#" class="waves-effect waves-light teal lighten-3 btn-large"> Start Game </button> 
       </form>
-</div>
+    </div>
+
     <div class="container" id="enterInitialsArea">
       <div id="enterInitialsHeader"></div>
       <div class="row">
         <form id="enter-initials-form">
-          <input
-            type="text"
-            class="white-text"
-            id="initials"
-            autocomplete="off"
-            placeholder="Enter your initials here..."
-            required="true"
-          />
-          <button
-            href="#"
-            class="waves-effect waves-light teal btn-large lighten-2"
-            type="submit"
-          >
-            Submit
-          </button>
+          <input type="text" class="white-text" id="initials" autocomplete="off" placeholder="Enter your initials here..." required="true"/>
+          <button href="#" class="waves-effect waves-light teal btn-large lighten-2" type="submit"> Submit </button>
         </form>
       </div>
     </div>
 
     <div class="container" id="highScoresArea">
-      <h2>
-        High Scores
-      </h2>
+      <h2>High Scores</h2>
       <div id="high-scores-container">
         <ol class="collection" id="high-score-list"></ol>
-        <button
-          class="waves-effect waves-light teal lighten-3 btn-large restart"
-        >
-          Restart
-        </button>
+        <button class="waves-effect waves-light teal lighten-3 btn-large restart"> Restart </button>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
-      integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0="
-      crossorigin="anonymous"
-    ></script>
 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- styles -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous"></script>
+    <!-- Game Script -->
     <script src="./js/game.js"></script>
+    <!-- Modals Script -->
     <script src="./js/modal.js"></script>
   </body>
+
 </html>
