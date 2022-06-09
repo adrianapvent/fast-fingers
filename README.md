@@ -41,10 +41,11 @@ SO THAT I can increase my overall efficiency with typing
 | 3 | Node.js |
 | 4 | mysql2 package |
 | 6 | sequelize |
-| 7 | inquirer package |
-| 8 | dotenv package |
-| 9 | express package |
-| 10 | handlebars package |
+| 7 | dotenv package |
+| 8 | express package |
+| 9 | handlebars package |
+| 10 | Heroku |
+| 11 | bcrypt |
 
 ## Installation
 ### VSCode:
@@ -72,7 +73,7 @@ Also if your project will require authentication like passwords or usernames, th
 - Javascript
 - Bootstrap
 - API's
-- dotenv - manages environment variable in klocal environment
+- dotenv - manages environment variable in local environment
 - Handlebars Templating- Templating Engine
 - MYSQL- open-source, relational database management system
 - Sequelize- JS style access to MYSQL database
