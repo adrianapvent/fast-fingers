@@ -12,19 +12,21 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
 require("./routes/API")(app);
 require("./routes/HTML")(app);
 
+// Handlebars Setting
 // const hbs = exphbs.create({ helpers });
 app.set('view engine', 'handlebars');
 app.engine('handlebars', handlebars({
-  layoutsDir:`${__dirname}/views/layouts`
+  defaultLayout: 'index',
+  layoutsDir: __dirname + '/views/layouts',
 }));
 
 
-app.get('/', (req.res) => {
+app.get('/', (req, res) => {
   res.render('main', {layout: 'index'});
 });
 
