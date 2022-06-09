@@ -57,7 +57,7 @@ After that, the development server can be started using:
 
 node server.js
 
-Finally, you can access the development site at http://localhost:3000/. Any changes made to the source file will be reloaded automatically.
+Finally, you can access the development site at http://localhost:3005/. Any changes made to the source file will be reloaded automatically.
 <!-- If you are working on a project that a user needs to install or run locally in a machine like a "POS", you should include the steps required to install your project and also the required dependencies if any.
 
 Provide a step-by-step description of how to get the development environment set and running. -->
