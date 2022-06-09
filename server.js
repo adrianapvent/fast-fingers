@@ -4,6 +4,7 @@ const db = require("./models");
 // const exphbs = require("express-handlebars");
 
 const dotenv = require("dotenv");
+const { Sequelize } = require("./models");
 dotenv.config();
 
 
